@@ -414,6 +414,18 @@ downloadLicenses {
 ----
 
 == Changelog
+=== v0.16.2 (2023-08-28)
+Gradle 8 compatibility
+
+- updated plugin id to io.truthencode.shadow to reflect shadowing.
+- updated plugins  / dependencies with security warnings
+* axion-release 1.11.0 -> 1.15.4
+* plexus-utils 2.05 -> 3.0.16
+* license-maven-plugin 3.0 - 4.1
+* android build 4.1.0 -> 8.1.0
+* guava 17.0 -> 30.0
+- reduced visibility of resolveURI to protected
+- Merged https://github.com/hierynomus/license-gradle-plugin/pull/210[#210] Configuration and Avoidance api
 
 === v0.15.0 (2018-11-22)
 - Correctly published the split-up plugins (I hope..)
