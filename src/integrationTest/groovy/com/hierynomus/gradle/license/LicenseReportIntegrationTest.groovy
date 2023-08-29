@@ -17,7 +17,7 @@ plugins {
     id "java"
 }
 
-apply plugin: "com.github.hierynomus.license-report"
+apply plugin: "io.truthencode.shadow.hierynomus.license-report"
 
 group = "testGroup"
 version = "1.5"

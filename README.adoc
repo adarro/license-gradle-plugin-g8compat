@@ -4,15 +4,36 @@ Jeroen van Erp
 
 image:https://travis-ci.org/hierynomus/license-gradle-plugin.svg?branch=master[Build Status,link=https://travis-ci.org/hierynomus/license-gradle-plugin]
 
+This plugin is a minor fork of the excellent https://github.com/hierynomus/license-gradle-plugin[License Gradle Plugin] which addresses recent incompatibilities which Gradle 7+.
+
+This repo will likely be archived once original is back on parity with current Gradle.
+
 This plugin will scan and adapt your source files to include a provided header, e.g. a LICENSE file.  By default it will scan every source set and report warnings. It will also create format tasks, which will properly format and apply the specified header. A bulk of the logic comes from the maven-license-plugin.
 
 This plugin will also report on the licenses of your dependencies.
 
 == Applying the plugin
+If using Gradle < 7.0
+Please use the https://github.com/hierynomus/license-gradle-plugin[original version.]
+
+For gradle 7.x and above, this plugin should function as per the original using the id below.
+Simply replace 'com.github.hierynomus.[plugin]' with 'io.truthencode.shadow.hierynomus.[plugin]'
+
+=== Gradle 7.0+
+In your `build.gradle` file add:
+
+[source,groovy,subs="verbatim,attributes"]
+----
+plugins {
+    id "io.truthencode.shadow.hierynomus.license" version "{license_plugin_version}"
+}
+----
+
+
 From v0.11.0 onwards the `license-gradle-plugin` will be published to http://bintray.com[] and will be available through the http://plugins.gradle.org/[Gradle plugin exchange]. This means that there are a few different usage scenarios listed below.
 
 
-=== Gradle 2.1 and above
+=== Gradle 2.1 -> 6.x
 In your `build.gradle` file add:
 
 [source,groovy,subs="verbatim,attributes"]

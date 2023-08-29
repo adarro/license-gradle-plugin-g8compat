@@ -40,7 +40,7 @@ class LicenseIntegrationTest extends IntegrationSpec {
         id "java"
     }
     
-    apply plugin: "com.github.hierynomus.license-base"
+    apply plugin: "io.truthencode.shadow.hierynomus.license-base"
     
     license {
         ignoreFailures = true

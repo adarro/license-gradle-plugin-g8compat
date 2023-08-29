@@ -149,7 +149,7 @@ class License extends SourceTask implements VerificationTask {
 
     // Gradle thinks all getters should be associated with properties that must be annotated
     // renamed as @Internal is not available in Gradle 2.x
-    URI resolveURI() {
+    protected URI resolveURI() {
         def uri = getHeaderURI() ?: getHeader().toURI()
         if (!uri) {
             throw new GradleException("A headerUri or header has to be provided to the License task")

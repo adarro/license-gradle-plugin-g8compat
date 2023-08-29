@@ -14,7 +14,7 @@ buildscript {
 plugins {
   id 'groovy'
   id 'idea'
-  id 'pl.allegro.tech.build.axion-release' version '1.11.0'
+  id 'pl.allegro.tech.build.axion-release' version '1.15.4'
   id 'com.gradle.plugin-publish' version '1.2.1'
   id 'java-gradle-plugin'
   id 'ru.vyarus.animalsniffer' version '1.7.1'
@@ -67,16 +67,16 @@ sourceSets.create("integrationTest")
 dependencies {
   signature 'org.codehaus.mojo.signature:java17:1.0@signature'
 
-    implementation "org.codehaus.plexus:plexus-utils:2.0.5"
+    implementation "org.codehaus.plexus:plexus-utils:3.0.16"
     implementation "com.mycila.xmltool:xmltool:3.3"
     // Using implementation instead of groovy, so that it goes into the pom
-    implementation ('com.mycila:license-maven-plugin:3.0') {
+    implementation ('com.mycila:license-maven-plugin:4.1') {
         exclude group: 'org.apache.maven', module: 'maven-plugin-api'
         exclude group: 'org.apache.maven', module: 'maven-project'
     }
     implementation gradleApi()
 
-    def androidGradlePlugin = 'com.android.tools.build:gradle:4.1.0'
+    def androidGradlePlugin = 'com.android.tools.build:gradle:8.1.0'
     compileOnly androidGradlePlugin
     testImplementation androidGradlePlugin
 
@@ -87,7 +87,7 @@ dependencies {
     integrationTestImplementation 'org.spockframework:spock-core'
     integrationTestImplementation 'org.spockframework:spock-junit4'
     integrationTestImplementation 'junit:junit:4.13.1'
-    integrationTestImplementation 'com.google.guava:guava:17.0'
+    integrationTestImplementation 'com.google.guava:guava:30.0'
 
     testImplementation gradleTestKit()
     testImplementation 'com.netflix.nebula:nebula-test:8.1.0'
@@ -95,7 +95,7 @@ dependencies {
     testImplementation 'org.spockframework:spock-core'
     testImplementation 'org.spockframework:spock-junit4'
     testImplementation 'junit:junit:4.13.1'
-    testImplementation 'com.google.guava:guava:17.0'
+    testImplementation 'com.google.guava:guava:30.0'
 }
 
 def integrationTestTask = tasks.register("integrationTest", Test) {
@@ -184,17 +184,17 @@ def pomConfig = {
 gradlePlugin {
     plugins {
         licensePlugin {
-            id = "com.github.hierynomus.license"
+            id = "io.truthencode.shadow.hierynomus.license"
             implementationClass = "nl.javadude.gradle.plugins.license.LicensePlugin"
         }
 
         licenseBasePlugin {
-            id = "com.github.hierynomus.license-base"
+            id = "io.truthencode.shadow.hierynomus.license-base"
             implementationClass = "com.hierynomus.gradle.license.LicenseBasePlugin"
         }
 
         licenseReportPlugin {
-            id = "com.github.hierynomus.license-report"
+            id = "io.truthencode.shadow.hierynomus.license-report"
             implementationClass = "com.hierynomus.gradle.license.LicenseReportingPlugin"
         }
     }
