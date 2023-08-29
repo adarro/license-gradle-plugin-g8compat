@@ -2,7 +2,8 @@
 Jeroen van Erp
 :license_plugin_version: 0.15.0
 
-image:https://travis-ci.org/hierynomus/license-gradle-plugin.svg?branch=master[Build Status,link=https://travis-ci.org/hierynomus/license-gradle-plugin]
+image:https://circleci.com/gh/adarro/license-gradle-plugin-g8compat.svg?style=svg["CircleCI", link="https://circleci.com/gh/adarro/license-gradle-plugin-g8compat"]
+
 
 This plugin is a minor fork of the excellent https://github.com/hierynomus/license-gradle-plugin[License Gradle Plugin] which addresses recent incompatibilities which Gradle 7+.
 
